@@ -27,44 +27,46 @@
 > >```
 
 
-
-
-```java
-@Entity
-@Table(name = "hotel_info")
-public class Hotel {
-    @Id
-    @Column(name = "hotel_id")
-    private String id;
-
-    @Column(name = "nm")
-    private String name;
-
-    private int year;
-
-    @Enumerated(EnumType.STRING)
-    private Grade grade;
-
-    __@Embedded__
-    __private Address address;__
-
-    private LocalDateTime created;
-
-    @Column(name = "modified")
-    private LocalDateTime lastModified;
-
-    protected Hotel() {
-    }
-
-    public Hotel(String id, String name, int year, Grade grade, Address address) {
-        this.id = id;
-        this.name = name;
-        this.year = year;
-        this.grade = grade;
-        this.address = address;
-        this.created = LocalDateTime.now();
-        this.lastModified = LocalDateTime.now();
-    }
-
-}
-```
+> > 해당 아래 구문을 확인</br>
+> > <span style="color:red">
+__private Address address;__
+    </span>
+> >```java
+> >@Entity
+> >@Table(name = "hotel_info")
+> >public class Hotel {
+> >    @Id
+> >    @Column(name = "hotel_id")
+> >    private String id;
+> >
+> >    @Column(name = "nm")
+> >    private String name;
+> >
+> >    private int year;
+> >
+> >    @Enumerated(EnumType.STRING)
+> >    private Grade grade;
+> >
+> >    @Embedded
+> >    private Address address;
+> >
+> >    private LocalDateTime created;
+> >
+> >    @Column(name = "modified")
+> >    private LocalDateTime lastModified;
+> >
+> >    protected Hotel() {
+> >    }
+> >
+> >    public Hotel(String id, String name, int year, Grade grade, Address address) {
+> >        this.id = id;
+> >        this.name = name;
+> >        this.year = year;
+> >        this.grade = grade;
+> >        this.address = address;
+> >        this.created = LocalDateTime.now();
+> >        this.lastModified = LocalDateTime.now();
+> >    }
+> >
+> >}
+> >```
